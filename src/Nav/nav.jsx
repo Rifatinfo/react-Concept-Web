@@ -1,6 +1,6 @@
 
 
-const Nav = () => {
+const Nav = ({selected}) => {
   return (
    <div >
      <nav className="bg-gray-800 text-white px-4 py-3 shadow-md w-full">
@@ -17,7 +17,7 @@ const Nav = () => {
             Product
           </a>
           <a href="#" className="hover:text-gray-400">
-            Cart
+          <p>  Cart <span className="text-white">{selected.lenght}</span></p>
           </a>
           <div>
           <span className="font-semibold">$500</span>

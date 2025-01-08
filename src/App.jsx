@@ -10,7 +10,8 @@ function App() {
     cart:true,
     status : "cart"
   });
- console.log(isActive);
+  const [selected, setSelected] = useState([]);
+//  console.log(isActive);
   const handleIsActive = (status) =>{
      if(status == "cart"){
       setIsActive({
@@ -26,11 +27,29 @@ function App() {
      }
   }
 
+  
+
+  const handleSelectedProduct = (product) =>{
+    const isExist = selected.find(p => p.id === product.id);
+
+    if(isExist){
+      alert("You have added a product");
+      return;
+    }
+    else{
+      const newProduct = [...selected, product];
+      setSelected(newProduct);
+    }
+    console.log(isExist);
+       
+
+  }
+// console.log(selected);
   return (
     <>
-      <Nav></Nav>
+      <Nav selected={selected}></Nav>
       <div className='flex  justify-around mt-10'>
-        <AllProduct></AllProduct>
+        <AllProduct handleSelectedProduct={handleSelectedProduct}></AllProduct>
         <CartContainer 
         isActive={isActive}
         handleIsActive={handleIsActive}></CartContainer>
