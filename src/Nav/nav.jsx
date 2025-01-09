@@ -17,7 +17,7 @@ const Nav = ({selected}) => {
             Product
           </a>
           <a href="#" className="hover:text-gray-400">
-          <p>  Cart <span className="text-white">{selected.lenght}</span></p>
+          <p>  Cart <span className="text-white"> {selected.length}</span></p>
           </a>
           <div>
           <span className="font-semibold">$500</span>
